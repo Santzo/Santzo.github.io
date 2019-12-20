@@ -12,7 +12,7 @@
         <div class="top">
             <div class="navigationBar">
             <a id="Home" onclick="PressButton(id)">Home</a>
-            <a id="Portfolio" onclick="PressButton(id)">Portfolio</a>
+            <a id="Projects" onclick="PressButton(id)">Projects</a>
             <a id="Contact" onclick="PressButton(id)">Contact</a>
             </div>
 
@@ -26,16 +26,15 @@
 <div id="mainContent">
     <div id="page">
             <div class="home">
-
                 <div class="homeColOne">
                     <img id="omakuva" src="images/omakuva.png">
-                    <p class="homeText" id="nameTitle">Santeri Hakoniemi</p>
+                    <p class="homeText title">Santeri Hakoniemi</p>
                     <p class="homeText">Hello! My name is Santeri. I'm a game / web / mobile developer residing in Vantaa, Finland. I have a passion for all of these things, especially for game development. For any inquiries (business or casual), please feel free to contact me. </p>
                 
                     <a href="mailto:santeri.hakoniemi@gmail.com" class="homeText" id="emailMe">Email me</a>
                 </div>
                 <div class="homeColTwo">
-                    <p class="homeText" id="nameTitle">Technologies</p>
+                    <p class="homeText title tech">Technologies</p>
                     <div class="technologyContainer">
                         <div id="colOne">
                             <img id="image" src="images/unity.png">
@@ -51,7 +50,7 @@
                         </div>
                         <div id="colTwo">
                             <p class="technologyTitle">C#</p>
-                            <p class="homeText">Along with Unity, you obviously will get accustomed with C#. I feel very comfortable working with C#, I definitely prefer static typed languages over dynamically typed ones. I have plenty of experience with C# and have also ventured a little bit into .NET and .NET Core technologies.</p>
+                            <p class="homeText">Alongside Unity, I obviously had to pick up and learn C#. I feel very comfortable working with C#, I definitely prefer static typed languages over dynamically typed ones. I have plenty of experience with C# and have also ventured a little bit into .NET and .NET Core technologies.</p>
                         </div>
                     </div>
                     <div class="technologyContainer">
@@ -78,17 +77,28 @@
                         </div>
                         <div id="colTwo">
                             <p class="technologyTitle">Blender</p>
-                            <p class="homeText">While still a beginner in 3D-modeling, I definitely have the skills to produce simple to moderately challenging 3D models. In the future I wish to be able to work a lot more with Blender. </p>
+                            <p class="homeText">While still a beginner in 3D modeling, I definitely have the skills to produce simple to moderately challenging 3D models. In the future I wish to be able to work a lot more with Blender. </p>
                         </div>
                     </div>
                 </div>
             </div>
     </div>
-    <div id="page"><p>Hello again page 2</p></div>
     <div id="page">
-
+        <p class="homeText title proj tech">Projects</p>
+        <div  id="projects">
+            <div id="projectsOne">
+                <a href="https://play.google.com/store/apps/details?id=com.SanteriHakoniemi.SpeedSoulsRecords" target="_blank" class="technologyTitle">Speedsouls Records</a>
+                <div class="row">
+                    <p class="halfCol homeText descText">Developed with: React Native, Javascript</p>
+                    <p class="halfCol homeText descText">Platform: Android</p>
+                </div>
+            </div>
+            <div id="projectsTwo">Bloo</div>
+        </div>
+    </div>
+    <div id="page">
         <div id="contactPage">
-           <p class="homeText" id="nameTitle">Contact Me</p>
+           <p class="homeText title">Contact Me</p>
            <form id="form" method="POST" name="contact_form">
            <div class="formClass">
             <div style="visibility: hidden" id="sendData">Sending form data...</div>

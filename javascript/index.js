@@ -16,7 +16,7 @@ function PressButton(id)
         case "Home":
             content.className="start"
             break;
-        case "Portfolio":
+        case "Projects":
             content.className="middle"
             break;
         case "Contact":
