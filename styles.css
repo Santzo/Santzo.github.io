@@ -232,7 +232,7 @@ input:-webkit-autofill:focus {
 .error{
     width:57%;
     padding-top: 0.15%; 
-    font-size: 85 %;
+    font-size: 85%;
     color: tomato;
 }
 .formColOne{
@@ -290,7 +290,7 @@ input:-webkit-autofill:focus {
         transform: translateY(-1px);
     }
 }
-@media only screen and (max-width: 768px)
+@media only screen and (max-width: 768px), only screen and (orientation: portrait)
 {
     body{
         height: 100%;
