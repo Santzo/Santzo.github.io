@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans+Extra+Condensed&display=swap" rel="stylesheet">
+    <title>Portfolio of Santeri Hakoniemi</title>
+</head>
+<body>
+        <div class="top">
+            <div class="navigationBar">
+            <a id="Home" onclick="PressButton(id)">Home</a>
+            <a id="Portfolio" onclick="PressButton(id)">Portfolio</a>
+            <a id="Contact" onclick="PressButton(id)">Contact</a>
+            </div>
+
+            <div class="navigationBar" id="nRight">
+                <a target= "_blank" href="https://github.com/Santzo"><img class="navigationBarIcon" src="images/github.png"></a>
+                <a target= "_blank" href="https://www.youtube.com/user/Santzo84"><img class="navigationBarIcon" src="images/youtube.png"></a>
+                <a target= "_blank" href="https://www.twitch.tv/Santzo84"><img class="navigationBarIcon" src="images/twitch.png"></a>
+            </div>
+        </div>
+
+<div id="mainContent">
+    <div id="page">
+            <div class="home">
+
+                <div class="homeColOne">
+                    <img id="omakuva" src="images/omakuva.png">
+                    <p class="homeText" id="nameTitle">Santeri Hakoniemi</p>
+                    <p class="homeText">Hello! My name is Santeri. I'm a game / web / mobile developer residing in Vantaa, Finland. I have a passion for all of these things, especially for game development. For any inquiries (business or casual), please feel free to contact me. </p>
+                
+                    <a href="mailto:santeri.hakoniemi@gmail.com" class="homeText" id="emailMe">Email me</a>
+                </div>
+                <div class="homeColTwo">
+                    <p class="homeText" id="nameTitle">Technologies</p>
+                    <div class="technologyContainer">
+                        <div id="colOne">
+                            <img id="image" src="images/unity.png">
+                        </div>
+                        <div id="colTwo">
+                            <p class="technologyTitle">Unity</p>
+                            <p class="homeText">Unity is the game engine that really got me into developing software. I use Unity almost every single day. Recently i've done research of Unitys new incoming Entity Component System, JOBS (for multi-threading) and UIElements.</p>
+                        </div>
+                    </div>
+                    <div class="technologyContainer">
+                        <div id="colOne">
+                            <img id="image" src="images/csharp.png">
+                        </div>
+                        <div id="colTwo">
+                            <p class="technologyTitle">C#</p>
+                            <p class="homeText">Along with Unity, you obviously will get accustomed with C#. I feel very comfortable working with C#, I definitely prefer static typed languages over dynamically typed ones. I have plenty of experience with C# and have also ventured a little bit into .NET and .NET Core technologies.</p>
+                        </div>
+                    </div>
+                    <div class="technologyContainer">
+                        <div id="colOne">
+                            <img id="image" src="images/javascript.png">
+                        </div>
+                        <div id="colTwo">
+                            <p class="technologyTitle">Javascript</p>
+                            <p class="homeText">Javascript is an obvious programming language to learn for anyone into web developing, so that was one of the biggest reasons I decided to learn it. I enjoy the syntax (since it resembles C# a lot) and also the immense flexibility of this language. </p>
+                        </div>
+                    </div>
+                    <div class="technologyContainer">
+                        <div id="colOne">
+                            <img id="image" src="images/react.png">
+                        </div>
+                        <div id="colTwo">
+                            <p class="technologyTitle">React / React Native</p>
+                            <p class="homeText">React (Native) was the first Javascript framework I learned. I'm really confident working in this enviroment and working with React is something I definitely want to do in the future. </p>
+                        </div>
+                    </div>
+                    <div class="technologyContainer">
+                        <div id="colOne">
+                            <img id="image" src="images/blender.png">
+                        </div>
+                        <div id="colTwo">
+                            <p class="technologyTitle">Blender</p>
+                            <p class="homeText">While still a beginner in 3D-modeling, I definitely have the skills to produce simple to moderately challenging 3D models. In the future I wish to be able to work a lot more with Blender. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div id="page"><p>Hello again page 2</p></div>
+    <div id="page">
+
+        <div id="contactPage">
+           <p class="homeText" id="nameTitle">Contact Me</p>
+           <form id="form" method="POST" name="contact_form">
+           <div class="formClass">
+            <div style="visibility: hidden" id="sendData">Sending form data...</div>
+                <label class="formColOne" for="formName">Name</label><p class="error" id="nameError" style="padding-top: 4px; font-size: 18px; color: tomato;"></p>
+                <input class="inputField"type="text" name="name" id="formName"> 
+             
+                <label class="formColOne" for="formEmail">Email Address</label><p class="error" id="emailError" style="padding-top: 4px; font-size: 18px; color: tomato;"></p>
+                <input class="inputField" type="text" name="email" id = "formEmail"> 
+                
+                <label class="formColOne" for="formMessage">Message</label><p class="error" id="messageError" style="padding-top: 4px; font-size: 18px; color: tomato;"></p>
+                <textarea class="inputField" style="resize: none;" rows="4" cols="50" name="message" id="formMessage"></textarea>
+                <div class="formColOne">
+                    <input  type="submit" value="Submit" id="formSubmit">
+                    <input  type="reset" value="Clear" id="formReset">
+                </div>
+                </form>
+            </div>
+           <p class="homeText" style="margin-top: 20px;">You can also contact me by email at <a href="mailto:santeri.hakoniemi@gmail.com">santeri.hakoniemi@gmail.com</a></p>
+        </div>
+    </div>
+
+    <script src="javascript/index.js"></script>
+</body>
+</html>

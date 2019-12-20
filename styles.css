@@ -1,0 +1,341 @@
+*{
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow-x: hidden; 
+    height:100vh;
+    background-image: linear-gradient(#0a0a0a, #1a1a1a);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+a{
+    text-decoration: none;
+    color: #aaa;
+}
+a:hover{
+    animation: blinker 1s infinite;
+    animation-timing-function: linear;
+}
+
+.top{
+    width:100%;
+    height:6vh;
+    display:flex;
+    flex-direction: row;
+    align-content: flex-start;
+}
+.navigationBar{
+    width:80%;
+    display:flex;
+    flex-direction: row;
+    height: 2.75em;
+    padding-top: 2px;
+    text-shadow: 2px 2px #000;
+    background-image: linear-gradient(#334, #445);  
+    color: #ccc;
+    text-align: center;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.navigationBar a{
+    color: #fff;
+    cursor: pointer;
+    opacity: 0.9;
+    text-decoration: none;
+    margin-right: 5.5%;
+    margin-top:2px;
+    margin-left: 2%;
+    font-size: 20px;
+}
+.navigationBar a:hover{
+    animation: blinker 1s infinite;
+    animation-timing-function: linear;
+}
+.navigationBar a:active{
+    transform: translate(2px, 2px);
+    transform: rotate(2deg);
+    transition: transform 0.2s;
+}
+.navigationBarIcon
+{
+    width: 40px;
+    height: 32px;
+    padding-top: 5px;
+}
+
+#nRight{
+    justify-content: space-evenly;
+    width:20%;
+    background-color: aqua;
+}
+#nRight a:hover{
+    animation: iconBlinker 1.25s infinite;
+    animation-timing-function: linear;
+}
+#mainContent{
+    display:flex;
+    flex-direction: row;
+    width:300%;
+    color:#fff;
+}
+
+#page{
+    display:flex;
+    width:100%;
+}
+
+.start{
+    transform: translate(0%);
+    transition: transform 1s;
+}
+.middle{
+    transform: translate(-33.33%);
+    transition: transform 1s;
+}
+.end{
+    transform: translate(-66.66%);
+    transition: transform 1s;
+}
+
+.home{
+    display:flex;
+    margin-top: 2%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+}
+.technologyContainer{
+        display:flex;
+        margin-top:1%;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+
+}
+.homeColOne{
+    width:35%;
+    margin-right: 5%;
+}
+.homeColTwo{
+    width:50%;
+    justify-content: flex-start;
+}
+#omakuva{
+  float:left;
+  margin-right: 15px;
+  margin-bottom: 0.1%;
+  display:flex;
+  width:40%;
+  height:40%;
+}
+
+.homeText{
+    text-align: left;
+    font-size: 20px;
+}
+#nameTitle{
+    font-size: 32px;
+    font-weight: bold;
+    color: #99c;
+    margin-bottom: 10px;
+}
+#emailMe{
+    text-align: center;
+    display:inline-block;
+    padding: 13px 13px 13px 13px;
+    color:#fff;
+    text-decoration: none;
+    border-style: solid;
+    border-color: #99a;
+    border-width: 2px;
+    border-radius: 15px;
+    width:250px;
+    background-color:#334;
+    margin-top: 50px;
+    cursor: pointer;
+}
+#emailMe:hover{
+    animation: blinker 1s infinite linear;
+}
+.technologyTitle{
+    font-size: 26px;
+    color: #99c;
+    margin-bottom: 3px
+}
+#colOne{
+    width:20%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#image{
+    display: flex; 
+    flex: 1 1 auto;
+    width:80%;
+    height:80%;
+}
+#colTwo{
+    display:flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    width:80%;
+}
+#contactPage{
+    display:flex;
+    flex-direction: column;
+    width:70%;
+    margin-top: 2%;
+    margin-left: 5%;
+}
+.inputField{
+    width:100%;
+    display: flex;
+    background-color: #222;
+    min-height: 30px;
+    color:#fff;
+    font-size: 22px;
+    border-radius: 6px;
+    border: solid 2px #444;
+    margin-bottom: 5px;
+}
+.inputField:focus{
+    outline: none;
+    border-color: #889;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 50px #222 inset;
+    -webkit-text-fill-color: #fff;
+    -webkit-text-size-adjust: none;
+}
+input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 50px #222 inset;/*your box-shadow*/
+    -webkit-text-fill-color: #fff;
+    -webkit-text-size-adjust: none;
+} 
+.formClass{
+    display: flex;
+    flex-shrink: unset;
+    font-size:22px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width:100%;
+    min-width: 750px;
+}
+.error{
+    width:70%;
+}
+.formColOne{
+    display:flex;
+    width:10%;
+    min-width:125px;
+}
+#formSubmit, #formReset{
+    font-size:22px;
+    color:#fff;
+    margin-top: 10px;
+    text-align: center;
+    border-width:2px;
+    border-radius: 15px;
+    border-color:#99a;
+    margin-right: 35px;
+    min-width:150px;
+    padding: 10px 20px 10px 20px;
+    background-color: #334;
+}
+#formSubmit:hover, #formReset:hover{
+    animation: blinker 1s infinite linear;
+    cursor: pointer;
+}
+#formSubmit:focus, #formReset:focus{
+    outline: none;
+}
+#sendData{
+    position: absolute;
+    top:17.5%;
+    left:78%;
+    padding: 20px 70px 20px 70px;
+    background-color: #333344dd;
+    font-size: 22px;
+    border-width:2px;
+    border-style: solid;
+    border-radius: 15px;
+    border-color:#99a;
+    animation: blinker 1s infinite linear;
+
+}
+
+@keyframes blinker{
+  
+    50% {
+        color:#aaa;
+        opacity: 0.7;
+        transform: translateY(-1px);
+    }
+ 
+}
+@keyframes iconBlinker{
+    50%{
+        opacity: 0.5;
+        transform: translateY(-1px);
+    }
+}
+@media only screen and (max-width: 800px)
+{
+    body{
+        height: 100%;
+    }
+    .navigationBar{
+        width:60%;
+        justify-content: space-around;
+    }
+    #nRight{
+        width:40%;
+        justify-content: flex-end;
+    }
+    .home{
+        align-items: flex-start;
+        flex-direction: column;
+    }
+    .homeColOne{
+        width:99%;
+        justify-content: center;
+        margin-bottom: 25px;
+    }
+    .homeColTwo{
+        width:99%;
+    }
+    #omakuva{
+        float: left;
+        width: 22%;
+        height: 22%;
+    }
+    #emailMe{
+        display:block;
+        width:70%;
+        margin-left: 12.5%;
+        margin-top: 15px;
+        
+    }
+    .homeText{
+        margin-left:0px;
+    }
+    .formClass{
+        flex-direction: row;
+        min-width: 420px;
+    }
+    #sendData{
+        left:72.5%;
+    }
+  
+}
+
+
+
