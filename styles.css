@@ -230,12 +230,15 @@ input:-webkit-autofill:focus {
     min-width: 500px;
 }
 .error{
-    width:70%;
+    width:57%;
+    padding-top: 0.15%; 
+    font-size: 85 %;
+    color: tomato;
 }
 .formColOne{
     display:flex;
-    width:10%;
-    min-width:125px;
+    width:6.5%;
+    min-width: 115px;
 }
 #formSubmit, #formReset{
     font-size:22px;
@@ -341,7 +344,8 @@ input:-webkit-autofill:focus {
     }
     .formClass{
         flex-direction: row;
-        min-width: 55%;
+        width:122.5%;
+        min-width: 100px;
     }
     #sendData{
         left:72.5%;

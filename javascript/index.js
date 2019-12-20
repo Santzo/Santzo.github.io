@@ -56,7 +56,7 @@ document.body.addEventListener('submit', e => {
     }
     if (!email.value.includes("@") || email.value === '' || email.value == null)
     {
-        emailError.innerText = "A valid email address is required."
+        emailError.innerText = "Valid email address is required."
         error = true;
     }
     if (message.value === '' || message.value == null)
