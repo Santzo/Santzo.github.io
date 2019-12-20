@@ -81,13 +81,13 @@ a:hover{
 #mainContent{
     display:flex;
     flex-direction: row;
-    width:300%;
+    width:300vw;
     color:#fff;
 }
 
 #page{
     display:flex;
-    width:100%;
+    width:100vw;
 }
 
 .start{
@@ -116,7 +116,7 @@ a:hover{
         flex-direction: row;
         justify-content: center;
         align-items: flex-start;
-
+        
 }
 .homeColOne{
     width:35%;
