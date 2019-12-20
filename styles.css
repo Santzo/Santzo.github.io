@@ -1,7 +1,7 @@
 *{
     margin: 0px 0px 0px 0px;
     padding: 0px 0px 0px 0px;
-    font-family: 'Fira Sans Extra Condensed', sans-serif;
+    font-family: 'Chakra Petch', sans-serif;
 }
 body{
     display: flex;
@@ -141,7 +141,6 @@ a:hover{
 }
 #nameTitle{
     font-size: 225%;
-    font-weight: bold;
     color: #99c;
     margin-bottom: 2%;
 }
@@ -237,11 +236,11 @@ input:-webkit-autofill:focus {
 }
 .formColOne{
     display:flex;
-    width:6.5%;
-    min-width: 115px;
+    width:10%;
+    min-width: 150px;
 }
 #formSubmit, #formReset{
-    font-size:22px;
+    font-size:95%;
     color:#fff;
     margin-top: 10px;
     text-align: center;
