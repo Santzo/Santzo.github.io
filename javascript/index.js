@@ -8,7 +8,32 @@ var emailError = document.getElementById("emailError");
 var messageError = document.getElementById("messageError");
 const sendData = document.getElementById("sendData");
 const contactPage = document.getElementById("contactPage");
+const zoomedImage = document.getElementById("zoomedImage");
 const defaultContactPage = contactPage.innerHTML;
+var alreadyOnImage = false;
+function ScaleImage(e, mouseOn)
+{
+    if (mouseOn)
+    {
+        let body = e.getBoundingClientRect();
+        let top = body.top - 100;
+        e.style.borderColor = "#ccd"
+        zoomedImage.src = e.src;
+        zoomedImage.style.top = `${top}px`;
+        zoomedImage.style.opacity = 1;
+        zoomedImage.style.zIndex = 1;
+        alreadyOnImage = true;
+
+    }
+    else 
+    {
+        zoomedImage.style.opacity = 0;
+        zoomedImage.style.zIndex = -1;
+        e.style.borderColor = "#444"
+        alreadyOnImage= false;
+    }
+}
+
 function PressButton(id)
 {
     switch (id)
@@ -24,6 +49,7 @@ function PressButton(id)
             break;
     }
 }
+
 function BackToForm(dontClear)
 {
     let tempName = formName.value;
@@ -83,11 +109,11 @@ document.body.addEventListener('submit', e => {
     .then(resp =>{ 
         if (!resp.ok)
         {
-           contactPage.innerHTML = '<p class="homeText" id="nameTitle">Error sending form</p> <p class="homeText">Unfortunately there was an error sending the form. You can send me an email <br> instead at <a class="homeText" href="mailto:santeri.hakoniemi@gmail.com">santeri.hakoniemi@gmail.com</a> or press the button below to resend the form.</p><a id="emailMe" style="margin-top:15px" onClick="BackToForm(true)">Back to form</a>';
+           contactPage.innerHTML = '<p class="homeText title">Error sending form</p> <p class="homeText">Unfortunately there was an error sending the form. You can send me an email <br> instead at <a class="homeText" href="mailto:santeri.hakoniemi@gmail.com">santeri.hakoniemi@gmail.com</a> or press the button below to resend the form.</p><a id="emailMe" style="margin-top:15px" onClick="BackToForm(true)">Back to form</a>';
             throw Error(resp.text);
         }
         return resp.text})
-    .then(contactPage.innerHTML = '<p class="homeText" id="nameTitle">Message sent successfully!</p> <p class="homeText">Thank you for contacting me. I will be responding to you shortly.</p><a id="emailMe" style="margin-top:15px" onClick="BackToForm(false)">Back to form</a>')
+    .then(contactPage.innerHTML = '<p class="homeText title">Message sent successfully!</p> <p class="homeText">Thank you for contacting me. I will be responding to you shortly.</p><a id="emailMe" style="margin-top:15px" onClick="BackToForm(false)">Back to form</a>')
 
 });
 document.body.addEventListener('reset', e => {

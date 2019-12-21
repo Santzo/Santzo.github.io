@@ -31,7 +31,7 @@
                     <p class="homeText title">Santeri Hakoniemi</p>
                     <p class="homeText">Hello! My name is Santeri. I'm a game / web / mobile developer residing in Vantaa, Finland. I have a passion for all of these things, especially for game development. For any inquiries (business or casual), please feel free to contact me. </p>
                 
-                    <a href="mailto:santeri.hakoniemi@gmail.com" class="homeText" id="emailMe">Email me</a>
+                    <a href="mailto:santeri.hakoniemi@gmail.com" class="button" id="emailMe">Email me</a>
                 </div>
                 <div class="homeColTwo">
                     <p class="homeText title tech">Technologies</p>
@@ -84,39 +84,67 @@
             </div>
     </div>
     <div id="page">
-        <p class="homeText title proj tech">Projects</p>
+
+        <p class="homeText title proj tech">Finished projects</p>
         <div  id="projects">
-            <div id="projectsOne">
-                <a href="https://play.google.com/store/apps/details?id=com.SanteriHakoniemi.SpeedSoulsRecords" target="_blank" class="technologyTitle">Speedsouls Records</a>
-                <div class="row">
-                    <p class="halfCol homeText descText">Developed with: React Native, Javascript</p>
-                    <p class="halfCol homeText descText">Platform: Android</p>
+            <img class="zoomedImage" id="zoomedImage" style="opacity:0; z-index: -1; bottom: 500px;">
+            <div class ="projectHolder projDark">
+                <div id="projectsOne">
+                    <a href="https://play.google.com/store/apps/details?id=com.SanteriHakoniemi.SpeedSoulsRecords" target="_blank" class="technologyTitle">Speedsouls Records</a>
+                    <div class="row">
+                        <p class="halfCol homeText descText">Developed with:<span style="color:rgb(255, 165, 91);"> React Native, Javascript</span></p>
+                        <p class="halfCol homeText descText">Platform:<span style="color:rgb(255, 165, 91);"> Android</span></p>
+                    </div>
+                    <p class="homeText projectText">Being a passionate speedrunner of games in the past, I decided to make this app for everyone that is into From Softwares souls series games (Dark Souls etc.). It fetches information from <a href="https://www.speedrun.com" target="_blank">speedrun.com</a> api. The purpose is to list all souls game related leaderboards. The application also allows searching users by their name.</p>
+                    <a href="https://play.google.com/store/apps/details?id=com.SanteriHakoniemi.SpeedSoulsRecords" target="_blank" class="button projectButton">Check this project out!</a>
+                </div>
+                <div id="projectsTwo">
+                    <img class="thumbnail vertical" style="border-color: #444;" onmouseout="ScaleImage(this, false)" onmouseover="ScaleImage(this, true)" src="images/speedsouls1.jpg">
+                    <img class="thumbnail vertical" style="border-color: #444;" onmouseout="ScaleImage(this, false)" onmouseover="ScaleImage(this, true)" src="images/speedsouls2.jpg">
                 </div>
             </div>
-            <div id="projectsTwo">Bloo</div>
+            <div class ="projectHolder projDark">
+                <div id="projectsOne">
+                    <a href="https://play.google.com/store/apps/details?id=com.santerihakoniemi.infinirunner" target="_blank" class="technologyTitle">Infinirunner</a>
+                    <div class="row">
+                        <p class="halfCol homeText descText">Developed with:<span style="color:rgb(255, 165, 91);"> Unity, C#</span></p>
+                        <p class="halfCol homeText descText">Platform:<span style="color:rgb(255, 165, 91);"> Android</span></p>
+                    </div>
+                    <p class="homeText projectText">Infinirunner is the first finished game i've done. It's an infinite runner style game, where the goal is to survive for as long as possible while collecting points by killing incoming enemies and dodging obstacles. The game will always end with the death of the player. Has an online leaderboard that allows you to see how well you've done against other players.</p>
+                    <a href="https://play.google.com/store/apps/details?id=com.santerihakoniemi.infinirunner" target="_blank" class="button projectButton">Check this project out!</a>
+                </div>
+                <div id="projectsTwo">
+                    <img class="thumbnail horizontal" style="border-color: #444;" onmouseout="ScaleImage(this, false)" onmouseover="ScaleImage(this, true)" src="images/infinirunner1.jpg">
+                    <img class="thumbnail horizontal" style="border-color: #444;" onmouseout="ScaleImage(this, false)" onmouseover="ScaleImage(this, true)" src="images/infinirunner2.jpg">
+                    <img class="thumbnail horizontal" style="border-color: #444;" onmouseout="ScaleImage(this, false)" onmouseover="ScaleImage(this, true)" src="images/infinirunner3.jpg">
+                </div>
+            </div>
         </div>
     </div>
     <div id="page">
         <div id="contactPage">
            <p class="homeText title">Contact Me</p>
            <form id="form" method="POST" name="contact_form">
-           <div class="formClass">
-            <div style="visibility: hidden" id="sendData">Sending form data...</div>
+            <div class="formClass">
+                <div style="visibility: hidden" id="sendData">
+                    Sending form data...
+                </div>
                 <label class="formColOne" for="formName">Name</label><p class="error" id="nameError"></p>
                 <input class="inputField"type="text" name="name" id="formName"> 
-             
+            
                 <label class="formColOne" for="formEmail">Email Address</label><p class="error" id="emailError"></p>
                 <input class="inputField" type="text" name="email" id = "formEmail"> 
                 
                 <label class="formColOne" for="formMessage">Message</label><p class="error" id="messageError"></p>
                 <textarea class="inputField" style="resize: none;" rows="7" cols="50" name="message" id="formMessage"></textarea>
-                <div class="formColOne">
-                    <input  type="submit" value="Send" id="formSubmit">
-                    <input  type="reset" value="Clear" id="formReset">
-                </div>
-                </form>
             </div>
-           <p class="homeText" style="margin-top: 20px;">You can also contact me by email at <a href="mailto:santeri.hakoniemi@gmail.com">santeri.hakoniemi@gmail.com</a></p>
+            <div class="formColOne">
+                <input class="button" type="submit" value="Send" id="formSubmit">
+                <input class="button" type="reset" value="Clear" id="formReset">
+            </div>
+            </form>
+           
+           <p class="homeText" style="margin-top: 20px;">You can also contact me via email at <a href="mailto:santeri.hakoniemi@gmail.com">santeri.hakoniemi@gmail.com</a></p>
         </div>
     </div>
 

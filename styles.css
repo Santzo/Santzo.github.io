@@ -9,13 +9,14 @@ body{
     justify-content: flex-start;
     overflow-x: hidden; 
     height:100%;
+    background-color: #030303;
     background-image: url("images/background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
 a{
     text-decoration: none;
-    color: #aaa;
+    color: rgb(255, 165, 91);
 }
 .row{
     display:flex;
@@ -26,11 +27,49 @@ a{
     width: 50%
 }
 
+.formClass{
+    display: flex;
+    flex-shrink: unset;
+    font-size:125%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width:100%;
+    min-width: 500px;
+}
+.button{
+    display: block;
+    border-style: solid;
+    border-color: #99a;
+    color: #fff;
+    border-width: 2px;
+    border-radius: 15px;
+    background-color:#334;
+    cursor: pointer;
+    padding: 1% 1.5% 1% 1.5%;
+    text-decoration: none;
+    width:50%;
+    font-size: 100%;
+}
+
 .top{
     width:100%;
     display:flex;
     flex-direction: row;
     align-content: flex-start;
+}
+.thumbnail{
+    border-radius: 15px; 
+    border-width: 2px; 
+    border-style: solid; 
+    margin-right: 2%;
+}
+.vertical{
+    max-width: 20%;
+    height: auto; 
+}
+.horizontal{
+    max-height: 40%;
+    max-width: 30%;
 }
 .navigationBar{
     width:80%;
@@ -142,17 +181,9 @@ a{
 #emailMe{
     text-align: center;
     display:inline-block;
-    padding: 0.6% 0.6% 0.6% 0.6%;
     color:#fff;
-    text-decoration: none;
-    border-style: solid;
-    border-color: #99a;
-    border-width: 2px;
-    border-radius: 15px;
     width:50%;
-    background-color:#334;
     margin-top: 5%;
-    cursor: pointer;
 }
 
 .technologyTitle{
@@ -212,15 +243,7 @@ input:-webkit-autofill:focus {
     -webkit-text-fill-color: #fff;
     -webkit-text-size-adjust: none;
 } 
-.formClass{
-    display: flex;
-    flex-shrink: unset;
-    font-size:125%;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width:100%;
-    min-width: 500px;
-}
+
 .error{
     width:57%;
     padding-top: 0.15%; 
@@ -233,7 +256,6 @@ input:-webkit-autofill:focus {
     min-width: 150px;
 }
 #formSubmit, #formReset{
-    font-size:95%;
     color:#fff;
     margin-top: 10px;
     text-align: center;
@@ -241,7 +263,7 @@ input:-webkit-autofill:focus {
     border-radius: 15px;
     border-color:#99a;
     margin-right: 35px;
-    min-width: 100px;
+    min-width: 130px;
     padding: 1.5% 2.5% 1.5% 2.5%;
     background-color: #334;
 }
@@ -267,36 +289,81 @@ input:-webkit-autofill:focus {
 #projects{
     display:flex;
     width:100%;
-    background-color: mediumblue;
     justify-content: center;
-    flex-direction: row;
+    align-items: center;
+    flex-direction: column;
 }
 #projectsOne{
-    width:45%;
+    display:flex;
+    width:50%;
+    padding-left: 1.45%;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-right: 5%;
 }
 #projectsTwo{
-    width:45%;
-    background-color: maroon;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width:35%;
+}
+.projectHolder{
+    width: 92.5%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin-bottom: 2%;
+    display: flex;
+    border: 2px solid;
+    border-color: #556;
+    border-radius: 15px;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+.zoomedImage{
+    display:inline-block;
+    position: absolute;
+    max-width: 100%;
+    border: 2px solid #556;
+    border-radius: 15px;
+    padding: 20px;
+    background-color: #000000ee;
+    right:150vw;
+    height: auto;
 }
 .descText{
     font-size: 85%;
     margin-left: 0.1%;
     margin-top: -0.1%;
 }
+.projectButton{
+   margin-top: 3%;
+}
+.projectText{
+    margin-top: 2.5%;
+}
 .proj{
     margin-top: 2%;
     margin-left: 5%;
 }
-a:hover, #formSubmit:hover, #formReset:hover, #nRight a:hover, #emailMe:hover{
+.projDark{
+    background-color: #111;
+}
+.projLight{
+    background-color: #222;
+}
+
+a:hover,  #nRight a:hover{
     animation: blinker 1s infinite;
     cursor: pointer;
     animation-timing-function: linear;
 }
-a:active, #formSubmit:active, #formReset:active{
+a:active{
     animation: none;
     transform: translate(2px, 2px);
 }
-
+.button:hover{
+    animation: buttonBlinker 1s infinite linear;
+}
 
 @keyframes blinker{
   
@@ -307,10 +374,11 @@ a:active, #formSubmit:active, #formReset:active{
     }
  
 }
-@keyframes iconBlinker{
+@keyframes buttonBlinker{
     50%{
-        opacity: 0.5;
-        transform: translateY(-1px);
+        border-color: #ccd;
+        background-color: #223;
+        font-size:104%;
     }
 }
 @media only screen and (max-width:768px)
