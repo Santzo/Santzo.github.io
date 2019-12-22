@@ -42,6 +42,7 @@ a{
     border-color: #99a;
     color: #fff;
     border-width: 2px;
+    text-align: center;
     border-radius: 15px;
     background-color:#334;
     cursor: pointer;
@@ -163,7 +164,7 @@ a{
 #omakuva{
   float:left;
   margin-right: 2.5%;
-  margin-bottom: 0.1%;
+  margin-bottom: 1.5%;
   display:flex;
   width:40%;
   height:40%;
@@ -178,12 +179,11 @@ a{
     color: #99c;
     margin-bottom: 2%;
 }
-#emailMe{
-    text-align: center;
+.homeButton{
     display:inline-block;
     color:#fff;
-    width:50%;
-    margin-top: 5%;
+    width:70%;
+    margin-top: 2.5%;
 }
 
 .technologyTitle{
@@ -258,7 +258,6 @@ input:-webkit-autofill:focus {
 #formSubmit, #formReset{
     color:#fff;
     margin-top: 10px;
-    text-align: center;
     border-width:2px;
     border-radius: 15px;
     border-color:#99a;
@@ -383,7 +382,7 @@ a:active{
 }
 @media only screen and (max-width:768px)
 {
-    a:hover, #formSubmit:hover, #formReset:hover, #nRight a:hover, #emailMe:hover{
+    a:hover, #formSubmit:hover, #formReset:hover, #nRight a:hover, .button:hover{
        animation: none;
     }
 }
@@ -391,7 +390,7 @@ a:active{
 {
     body{
         height: 100%;
-        font-size: 80%;
+        font-size: 75%;
     }
     .row{
         flex-direction: column;
@@ -412,7 +411,7 @@ a:active{
         flex-direction: column;
     }
     .homeColOne, #projectsOne, #projectsTwo{
-        width:97.5%;
+        width:95.5%;
         margin-right:0%;
         background-color: mediumorchid;
         justify-content: center;
@@ -423,8 +422,14 @@ a:active{
         margin-left:0%;
         margin-bottom: 3%;
     }
+    #omakuva{
+        margin: 5px;
+    }
     .homeColTwo{
         width:100%;
+    }
+    .homeButton{
+        margin-left: 12.5%;
     }
     .technologyContainer{
         width:100%;
@@ -458,6 +463,14 @@ a:active{
     }
     #sendData{
         left:72.5%;
+    }
+    .formColOne{
+        width: 35%;
+        min-width:35%;
+    }
+    .error{
+        font-size: 90%;
+        width:65%;
     }
 }
 @media only screen and (max-width: 768px) and (orientation: landscape)

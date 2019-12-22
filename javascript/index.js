@@ -11,47 +11,41 @@ const contactPage = document.getElementById("contactPage");
 const zoomedImage = document.getElementById("zoomedImage");
 const defaultContactPage = contactPage.innerHTML;
 var alreadyOnImage = false;
-function ScaleImage(e, mouseOn)
-{
-    if (mouseOn)
-    {
+function ScaleImage(e, mouseOn) {
+    if (mouseOn) {
         let body = e.getBoundingClientRect();
         let top = body.top - 100;
         e.style.borderColor = "#ccd"
         zoomedImage.src = e.src;
         zoomedImage.style.top = `${top}px`;
-        zoomedImage.style.opacity = 1;
+        zoomedImage.style.visibility = "visible";
         zoomedImage.style.zIndex = 1;
         alreadyOnImage = true;
 
     }
-    else 
-    {
-        zoomedImage.style.opacity = 0;
+    else {
+        zoomedImage.style.visibility = "hidden";
         zoomedImage.style.zIndex = -1;
         e.style.borderColor = "#444"
-        alreadyOnImage= false;
+        alreadyOnImage = false;
     }
 }
 
-function PressButton(id)
-{
-    switch (id)
-    {
+function PressButton(id) {
+    switch (id) {
         case "Home":
-            content.className="start"
+            content.className = "start"
             break;
         case "Projects":
-            content.className="middle"
+            content.className = "middle"
             break;
         case "Contact":
-            content.className="end"
+            content.className = "end"
             break;
     }
 }
 
-function BackToForm(dontClear)
-{
+function BackToForm(dontClear) {
     let tempName = formName.value;
     let tempEmail = email.value;
     let tempMessage = message.value;
@@ -59,8 +53,7 @@ function BackToForm(dontClear)
     formName = document.getElementById("formName");
     email = document.getElementById("formEmail");
     message = document.getElementById("formMessage");
-    if (dontClear)
-    {
+    if (dontClear) {
         formName.value = tempName;
         email.value = tempEmail;
         message.value = tempMessage;
@@ -69,56 +62,60 @@ function BackToForm(dontClear)
     emailError = document.getElementById("emailError");
     messageError = document.getElementById("messageError");
 }
+document.body.addEventListener('reset', e => {
+    nameError.innerText = '';
+    emailError.innerText = '';
+    messageError.innerText = '';
+})
 
 document.body.addEventListener('submit', e => {
     let error = false;
     nameError.innerText = '';
     emailError.innerText = '';
     messageError.innerText = '';
-    if (formName.value === '' || formName.value == null)
-    {
+    if (formName.value === '' || formName.value == null) {
         nameError.innerText = "Name is required."
         error = true;
     }
-    if (!email.value.includes("@") || email.value === '' || email.value == null)
-    {
+    if (!email.value.includes("@") || email.value === '' || email.value == null) {
         emailError.innerText = "Valid email address is required."
         error = true;
     }
-    if (message.value === '' || message.value == null)
-    {
+    if (message.value === '' || message.value == null) {
         messageError.innerText = "Please provide a message."
         error = true;
     }
     e.preventDefault()
-    if (error)
-    {
+    if (error) {
         return;
     }
-    
+
     let formData = new FormData();
+    error = false;
     formData.append('name', formName.value);
     formData.append('email', email.value);
     formData.append('message', message.value);
-    
+
     sendData.style.visibility = "visible";
 
-    fetch ('https://bicentennial-accura.000webhostapp.com/contact.php', 
-    {method:'post', 
-    body: formData})
-    .then(resp =>{ 
-        if (!resp.ok)
+    fetch('https://bicentennial-accura.000webhostapp.com/contact.php',
         {
-           contactPage.innerHTML = '<p class="homeText title">Error sending form</p> <p class="homeText">Unfortunately there was an error sending the form. You can send me an email <br> instead at <a class="homeText" href="mailto:santeri.hakoniemi@gmail.com">santeri.hakoniemi@gmail.com</a> or press the button below to resend the form.</p><a id="emailMe" style="margin-top:15px" onClick="BackToForm(true)">Back to form</a>';
-            throw Error(resp.text);
-        }
-        return resp.text})
-    .then(contactPage.innerHTML = '<p class="homeText title">Message sent successfully!</p> <p class="homeText">Thank you for contacting me. I will be responding to you shortly.</p><a id="emailMe" style="margin-top:15px" onClick="BackToForm(false)">Back to form</a>')
-
+            method: 'post',
+            body: formData
+        })
+        .then(resp => {
+            if (!resp.ok) {
+                error = true;
+                contactPage.innerHTML = '<p class="homeText title">Error sending form</p> <p class="homeText">Unfortunately there was an error sending the form. You can send me an email <br> instead at <a class="homeText" href="mailto:santeri.hakoniemi@gmail.com">santeri.hakoniemi@gmail.com</a> or press the button below to resend the form.</p><a class="button homeButton" style="margin-top:15px; width:10vw;" onClick="BackToForm(true)">Back to form</a>';
+                throw Error(resp.text);
+            }
+            return resp.text
+        })
+        .then(() => {
+            if (!error) {
+                contactPage.innerHTML = '<p class="homeText title">Message sent successfully!</p> <p class="homeText">Thank you for contacting me. I will be responding to you shortly.</p><a class="button homeButton" style="margin-top:15px" onClick="BackToForm(false)">Back to form</a>'
+            }
+        })
+        .catch(err => contactPage.innerHTML = '<p class="homeText title">Error sending form</p> <p class="homeText">Unfortunately there was an error sending the form. You can send me an email <br> instead at <a class="homeText" href="mailto:santeri.hakoniemi@gmail.com">santeri.hakoniemi@gmail.com</a> or press the button below to resend the form.</p><a class="button homeButton" style="margin-top:15px; width:10vw;" onClick="BackToForm(true)">Back to form</a>');
 });
-document.body.addEventListener('reset', e => {
-    nameError.innerText = '';
-    emailError.innerText = '';
-    messageError.innerText = '';
-})
 
