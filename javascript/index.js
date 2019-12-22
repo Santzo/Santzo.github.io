@@ -13,8 +13,11 @@ const defaultContactPage = contactPage.innerHTML;
 var alreadyOnImage = false;
 function ScaleImage(e, mouseOn) {
     if (mouseOn) {
+        console.log(window.innerHeight);
         let body = e.getBoundingClientRect();
-        let top = body.top - 100;
+        console.log (body.width + ", " + body.height)
+        let top = window.pageYOffset + window.innerHeight / 8;
+        top += body.width > body.height ? body.height : 0;
         e.style.borderColor = "#ccd"
         zoomedImage.src = e.src;
         zoomedImage.style.top = `${top}px`;

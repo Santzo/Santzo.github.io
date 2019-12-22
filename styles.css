@@ -65,12 +65,12 @@ a{
     margin-right: 2%;
 }
 .vertical{
-    max-width: 20%;
-    height: auto; 
+    max-width: 7.5vw;
+    max-height: 30vh;
 }
 .horizontal{
-    max-height: 40%;
-    max-width: 30%;
+    max-width: 15vw;
+    height: auto;
 }
 .navigationBar{
     width:80%;
@@ -321,11 +321,12 @@ input:-webkit-autofill:focus {
 .zoomedImage{
     display:inline-block;
     position: absolute;
-    max-width: 100%;
+    max-width: 33vw;
+    max-height: 65vh;
     border: 2px solid #556;
     border-radius: 15px;
-    padding: 20px;
-    background-color: #000000ee;
+    padding: 0.25%;
+    background-color: rgba(0, 0, 0, 0.889);
     right:150vw;
     height: auto;
 }
@@ -377,16 +378,16 @@ a:active{
     50%{
         border-color: #ccd;
         background-color: #223;
-        font-size:104%;
+        font-size:102%;
     }
 }
-@media only screen and (max-width:768px)
+@media only screen and (max-width:868px)
 {
     a:hover, #formSubmit:hover, #formReset:hover, #nRight a:hover, .button:hover{
        animation: none;
     }
 }
-@media only screen and (max-width: 768px) and (orientation: portrait)
+@media only screen and (max-width: 868px) and (orientation: portrait)
 {
     body{
         height: 100%;
@@ -473,7 +474,7 @@ a:active{
         width:65%;
     }
 }
-@media only screen and (max-width: 768px) and (orientation: landscape)
+@media only screen and (max-width: 868px) and (orientation: landscape)
 {
     body{
         height:100%;
@@ -486,6 +487,9 @@ a:active{
     .navigationBarIcon{
         height: 6vh;
         width:8vh;
+    }
+    .projectText{
+        font-size:85%;
     }
 }
 
