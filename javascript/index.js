@@ -77,6 +77,9 @@ document.body.addEventListener('reset', e => {
     messageError.innerText = '';
 })
 
+window.addEventListener('scroll', e => {
+    zoomedImage.style.visibility = "hidden";
+})
 document.body.addEventListener('submit', e => {
     let error = false;
     nameError.innerText = '';
