@@ -454,7 +454,6 @@ a:active{
     .projectHolder{
         flex-direction: column;
         padding-left: 2%;
-        margin-left: 4%;
         width:95%;
     }
     .projectsTitleOne{
