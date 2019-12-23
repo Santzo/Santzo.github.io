@@ -63,6 +63,8 @@ a{
     border-width: 2px; 
     border-style: solid; 
     margin-right: 2%;
+    margin-top: 1%;
+    z-index: 0;
 }
 .vertical{
     max-width: 7.5vw;
@@ -292,6 +294,17 @@ input:-webkit-autofill:focus {
     align-items: center;
     flex-direction: column;
 }
+.projectsTitleOne{
+    width:40%; 
+    margin-bottom: 0%; 
+    text-align: left;
+}
+.projectsTitleTwo
+{
+    width:60%; 
+    text-align: right; 
+    font-size: calc(11px + 0.5vw);
+}
 #projectsOne{
     display:flex;
     width:50%;
@@ -322,6 +335,7 @@ input:-webkit-autofill:focus {
     display:inline-block;
     position: absolute;
     max-width: 33vw;
+    pointer-events: none;
     max-height: 65vh;
     border: 2px solid #556;
     border-radius: 15px;
@@ -341,9 +355,13 @@ input:-webkit-autofill:focus {
 .projectText{
     margin-top: 2.5%;
 }
-.proj{
+.projRow{
+    width:90%; 
+    flex-direction: row; 
+    align-items: flex-end; 
+    margin-bottom: 0.5%; 
+    margin-left: 5%; 
     margin-top: 2%;
-    margin-left: 5%;
 }
 .projDark{
     background-color: #111;
@@ -396,17 +414,27 @@ a:active{
     .row{
         flex-direction: column;
     }
+    .projRow{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .halfCol{
+        width:100%;
+    }
     .navigationBar{
         width:60%;
         justify-content: flex-start;
         font-size:3.4vw;
     }
+    .projectText{
+        margin-top: 2.5%;
+        font-size:100%;
+    }
     #nRight{
         width:40%;
         justify-content: flex-end;
     }
-    .home, #projects{
-        background-color: midnightblue;
+    .home, #f{
         align-items: center;
         justify-content: center;
         flex-direction: column;
@@ -414,7 +442,7 @@ a:active{
     .homeColOne, #projectsOne, #projectsTwo{
         width:95.5%;
         margin-right:0%;
-        background-color: mediumorchid;
+        /* background-color: mediumorchid; */
         justify-content: center;
         margin-bottom: 3.5%;
     }
@@ -423,11 +451,36 @@ a:active{
         margin-left:0%;
         margin-bottom: 3%;
     }
+    .projectHolder{
+        flex-direction: column;
+        padding-left: 2%;
+        margin-left: 4%;
+        width:95%;
+    }
+    .projectsTitleOne{
+        text-align: left;
+        width:100%;
+        margin-bottom: 0%;
+    }
+    .projectsTitleTwo{
+        text-align:left;
+        width:100%;
+        margin-bottom: 2.5%;
+    }
+    .projectButton{
+        width:95%;
+    }
     #omakuva{
         margin: 5px;
     }
     .homeColTwo{
         width:100%;
+    }
+    .zoomedImage{
+        max-width: 60vw;
+        max-height: 40vh;
+        right: 120vw;
+        opacity: 0.7;
     }
     .homeButton{
         margin-left: 12.5%;
@@ -482,15 +535,13 @@ a:active{
     }
     .navigationBar{
         height: 9.5vh;
-        font-size: 4vh;
+        font-size: 3.5vh;
     }
     .navigationBarIcon{
         height: 6vh;
         width:8vh;
     }
-    .projectText{
-        font-size:85%;
-    }
+
 }
 
 

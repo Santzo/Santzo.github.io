@@ -13,11 +13,17 @@ const defaultContactPage = contactPage.innerHTML;
 var alreadyOnImage = false;
 function ScaleImage(e, mouseOn) {
     if (mouseOn) {
-        console.log(window.innerHeight);
+        let mobilePortrait = window.innerHeight < 868 && window.innerHeight > window.innerWidth;
         let body = e.getBoundingClientRect();
-        console.log (body.width + ", " + body.height)
-        let top = window.pageYOffset + window.innerHeight / 8;
-        top += body.width > body.height ? body.height : 0;
+        let top = 0;
+        if (!mobilePortrait)
+        {
+            top = window.pageYOffset + window.innerHeight / 8;
+            top += body.width > body.height ? body.height : 0;
+        }
+        else {
+            top = window.pageYOffset;
+        }
         e.style.borderColor = "#ccd"
         zoomedImage.src = e.src;
         zoomedImage.style.top = `${top}px`;
