@@ -8,25 +8,25 @@ var emailError = document.getElementById("emailError");
 var messageError = document.getElementById("messageError");
 const sendData = document.getElementById("sendData");
 const contactPage = document.getElementById("contactPage");
-const zoomedImage = document.getElementById("zoomedImage");
+const zoomedImage = document.getElementById("zoomedImageContainer");
 const defaultContactPage = contactPage.innerHTML;
 var alreadyOnImage = false;
 function ScaleImage(e, mouseOn) {
     if (mouseOn) {
-        let mobilePortrait = window.innerHeight < 868 && window.innerHeight > window.innerWidth;
-        let body = e.getBoundingClientRect();
-        let top = 0;
-        if (!mobilePortrait)
-        {
-            top = window.pageYOffset + window.innerHeight / 8;
-            top += body.width > body.height ? body.height : 0;
-        }
-        else {
-            top = window.pageYOffset;
-        }
+    //     let mobilePortrait = window.innerHeight < 868 && window.innerHeight > window.innerWidth;
+    //     let body = e.getBoundingClientRect();
+    //     let top = 0;
+    //     if (!mobilePortrait)
+    //     {
+    //         top = window.pageYOffset + window.innerHeight / 8;
+    //         top += body.width > body.height ? body.height : 0;
+    //     }
+    //     else {
+    //         top = window.pageYOffset;
+    //     }
+    //     zoomedImage.style.top = `${top}px`;
         e.style.borderColor = "#ccd"
         zoomedImage.src = e.src;
-        zoomedImage.style.top = `${top}px`;
         zoomedImage.style.visibility = "visible";
         zoomedImage.style.zIndex = 1;
         alreadyOnImage = true;

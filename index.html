@@ -12,6 +12,7 @@
 </head>
 
 <body>
+    <img src="images/speedsouls1.jpg" id="zoomedImageContainer">
     <div class="top">
         <div class="navigationBar">
             <a id="Home" onclick="PressButton(id)">Home</a>
@@ -30,7 +31,7 @@
     </div>
 
     <div id="mainContent">
-        <div id="page">
+        <div class="page">
             <div class="home">
                 <div class="homeColOne">
                     <img alt ="Picture of me" id="omakuva" src="images/omakuva.png">
@@ -38,8 +39,6 @@
                     <p class="homeText">Hello! My name is Santeri. I'm a game / web / mobile developer residing in
                         Vantaa, Finland. I have a passion for all of these things, especially for game development. For
                         any inquiries (business or casual), please feel free to contact me. </p>
-                    <a href="mailto:santeri.hakoniemi@gmail.com" target="_blank" class="button homeButton">Email
-                        me</a>
                     <a href="https://github.com/Santzo" target="_blank" class="button homeButton">GitHub</a>
                     <a href="https://www.youtube.com/user/Santzo84" target="_blank"
                         class="button homeButton">Youtube</a>
@@ -48,10 +47,10 @@
                 <div class="homeColTwo">
                     <p class="homeText title tech">Technologies</p>
                     <div class="technologyContainer">
-                        <div id="colOne">
-                            <img id="image" alt="Unity" src="images/unity.png">
+                        <div class="colOne">
+                            <img class="image" alt="Unity" src="images/unity.png">
                         </div>
-                        <div id="colTwo">
+                        <div class="colTwo">
                             <p class="technologyTitle">Unity</p>
                             <p class="homeText">Unity is the game engine that really got me into developing software. I
                                 use Unity almost every single day. Recently i've done research of Unitys new incoming
@@ -59,10 +58,10 @@
                         </div>
                     </div>
                     <div class="technologyContainer">
-                        <div id="colOne">
-                            <img id="image" alt="C#" src="images/csharp.png">
+                        <div class="colOne">
+                            <img class="image" alt="C#" src="images/csharp.png">
                         </div>
-                        <div id="colTwo">
+                        <div class="colTwo">
                             <p class="technologyTitle">C#</p>
                             <p class="homeText">Alongside Unity, I obviously had to pick up and learn C#. I feel very
                                 comfortable working with C#, I definitely prefer static typed languages over dynamically
@@ -71,10 +70,10 @@
                         </div>
                     </div>
                     <div class="technologyContainer">
-                        <div id="colOne">
-                            <img id="image" alt="Javascript" src="images/javascript.png">
+                        <div class="colOne">
+                            <img class="image" alt="Javascript" src="images/javascript.png">
                         </div>
-                        <div id="colTwo">
+                        <div class="colTwo">
                             <p class="technologyTitle">Javascript</p>
                             <p class="homeText">Javascript is an obvious programming language to learn for anyone into
                                 web developing, so that was one of the biggest reasons I decided to learn it. I enjoy
@@ -83,10 +82,10 @@
                         </div>
                     </div>
                     <div class="technologyContainer">
-                        <div id="colOne">
-                            <img id="image" alt="React" src="images/react.png">
+                        <div class="colOne">
+                            <img class="image" alt="React" src="images/react.png">
                         </div>
-                        <div id="colTwo">
+                        <div class="colTwo">
                             <p class="technologyTitle">React / React Native</p>
                             <p class="homeText">React (Native) was the first Javascript framework I learned. I'm really
                                 confident working in this enviroment and working with React is something I definitely
@@ -94,10 +93,10 @@
                         </div>
                     </div>
                     <div class="technologyContainer">
-                        <div id="colOne">
-                            <img id="image" alt="Blender" src="images/blender.png">
+                        <div class="colOne">
+                            <img class="image" alt="Blender" src="images/blender.png">
                         </div>
-                        <div id="colTwo">
+                        <div class="colTwo">
                             <p class="technologyTitle">Blender</p>
                             <p class="homeText">While still a beginner in 3D modeling, I definitely have the skills to
                                 produce simple to moderately challenging 3D models. In the future I wish to be able to
@@ -107,15 +106,15 @@
                 </div>
             </div>
         </div>
-        <div id="page">
+        <div class="page">
+
             <div class="row projRow">
                 <p class="homeText title proj tech projectsTitleOne" >Projects</p>
                 <p class="homeText proj projectsTitleTwo">My ongoing projects are on my <a
                         href="https://github.com/Santzo" target="_blank">GitHub</a> page.</p>
             </div>
             <div id="projects">
-                <img src="" alt="Zoomed Image" class="zoomedImage" id="zoomedImage"
-                    style="visibility: hidden; z-index: -1; bottom: 500px;">
+              
                 <div class="projectHolder projDark">
                     <div id="projectsOne">
                         <a href="https://play.google.com/store/apps/details?id=com.SanteriHakoniemi.SpeedSoulsRecords"
@@ -175,7 +174,7 @@
                 </div>
             </div>
         </div>
-        <div id="page">
+        <div class="page">
             <div id="contactPage">
                 <p class="homeText title">Contact Me</p>
                 <form id="form" method="POST" name="contact_form">
@@ -209,5 +208,6 @@
     </div>
     <script src="javascript/index.js"></script>
 </body>
+
 
 </html>

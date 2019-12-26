@@ -120,7 +120,7 @@ a{
     color:#fff;
 }
 
-#page{
+.page{
     display:flex;
     flex-direction: column;
     width:100%;
@@ -193,20 +193,20 @@ a{
     color: rgb(255, 165, 91);
     margin-bottom: 0.3%
 }
-#colOne{
+.colOne{
     width:20%;
     display:flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-#image{
+.image{
     display: flex; 
     flex: 1 1 auto;
     width:80%;
     height:80%;
 }
-#colTwo{
+.colTwo{
     display:flex;
     flex-direction: column;
     flex: 1 1 auto;
@@ -331,18 +331,20 @@ input:-webkit-autofill:focus {
     flex-direction: row;
     justify-content: flex-start;
 }
-.zoomedImage{
-    display:inline-block;
-    position: absolute;
-    max-width: 33vw;
+#zoomedImageContainer{
+    position:fixed;
+    background-color: #000000bb;
+    top:50%;
+    left:50%;
+    max-width:90%;
+    max-height:90%;
+    z-index: 1;
     pointer-events: none;
-    max-height: 65vh;
-    border: 2px solid #556;
+    padding: 10px;
+    visibility: hidden;
+    border: 2px solid #99a;
     border-radius: 15px;
-    padding: 0.25%;
-    background-color: rgba(0, 0, 0, 0.889);
-    right:150vw;
-    height: auto;
+    transform: translate(-50%, -50%);
 }
 .descText{
     font-size: 85%;
