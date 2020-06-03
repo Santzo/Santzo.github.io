@@ -34,7 +34,7 @@
         <div class="page">
             <div class="home">
                 <div class="homeColOne">
-                    <img alt ="Picture of me" id="omakuva" src="images/omakuva.png">
+                    <img alt="Picture of me" id="omakuva" src="images/omakuva.png">
                     <p class="homeText title">Santeri Hakoniemi</p>
                     <p class="homeText">Hello! My name is Santeri. I'm a game / web / mobile developer residing in
                         Vantaa, Finland. I have a passion for all of these things, especially for game development. For
@@ -109,12 +109,40 @@
         <div class="page">
 
             <div class="row projRow">
-                <p class="homeText title proj tech projectsTitleOne" >Projects</p>
+                <p class="homeText title proj tech projectsTitleOne">Projects</p>
                 <p class="homeText proj projectsTitleTwo">My ongoing projects are on my <a
                         href="https://github.com/Santzo" target="_blank">GitHub</a> page.</p>
             </div>
             <div id="projects">
-              
+                <div class="projectHolder projDark">
+                    <div id="projectsOne">
+                        <p class="technologyTitle">The Kerääjä (Work in progress)</a>
+                        <div class="row">
+                            <p class="halfCol homeText descText">Developed with:<span style="color:rgb(255, 165, 91);">
+                                    Unity, C#, Blender</span></p>
+                            <p class="halfCol homeText descText">Platform:<span style="color:rgb(255, 165, 91);">
+                                    Android</span></p>
+                        </div>
+                        <p class="homeText projectText">Reminiscing myself of my old times as a warehouse worker, I've
+                            decided to start developing a game about the job of a warehouse worker. The goal is to
+                            complete the given "course" as fast as possible. The game will have sort of non-realistic
+                            controls and also the ability to choose from three different vehicles. It also includes an
+                            online leaderboard for you to compare your time with other players.
+                        </p>
+                    </div>
+                    <div id="projectsTwo">
+                        <img alt="Thumbnail" class="thumbnail horizontal" style="border-color: #444;"
+                            onmouseout="ScaleImage(this, false)" onmouseover="ScaleImage(this, true)"
+                            src="images/keraaja1.jpg">
+                        <img alt="Thumbnail" class="thumbnail horizontal" style="border-color: #444;"
+                            onmouseout="ScaleImage(this, false)" onmouseover="ScaleImage(this, true)"
+                            src="images/keraaja2.jpg">
+                        <img alt="Thumbnail" class="thumbnail horizontal" style="border-color: #444;"
+                            onmouseout="ScaleImage(this, false)" onmouseover="ScaleImage(this, true)"
+                            src="images/keraaja3.jpg">
+                    </div>
+                </div>
+
                 <div class="projectHolder projDark">
                     <div id="projectsOne">
                         <a href="https://play.google.com/store/apps/details?id=com.SanteriHakoniemi.SpeedSoulsRecords"
@@ -142,6 +170,8 @@
                             src="images/speedsouls2.jpg">
                     </div>
                 </div>
+
+
                 <div class="projectHolder projDark">
                     <div id="projectsOne">
                         <a href="https://play.google.com/store/apps/details?id=com.santerihakoniemi.infinirunner"
