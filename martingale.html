@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html style="font-family:'Courier New', Courier, monospace; font-size: 18px;">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Martingale</title>
+</head>
+
+<body>
+    <div
+        style="width: 400px; display: flex; flex-direction: column; justify-content: space-between; gap:10px; margin: 12px;">
+        <h1 style="white-space: nowrap;">Martingale -simulaattori</h1>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span>Alkupääoma</span>
+            <input type="number" id="startCapital" min="1" value="10000"
+                style="font-family: inherit; font-size: inherit;" />
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span>Tavoitepääoma</span>
+            <input type="number" id="targetCapital" min="1" value="100000"
+                style="font-family: inherit; font-size: inherit;" />
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span>Aloituspanos</span>
+            <input type="number" id="startBet" min="1" value="1" style="font-family: inherit; font-size: inherit;" />
+        </div>
+        <button id="startButton" onclick="start()"
+            style="font-family: inherit; font-size: inherit; width: 50%; margin-top: 8px; align-self: center;">Aloita</button>
+        <div id="resultText"
+            style="white-space: nowrap; margin-top: 8px; display:flex; flex-direction: column; gap:8px;"></div>
+    </div>
+    <script>
+
+
+        function start() {
+            let currentCapital = Number(document.querySelector("#startCapital").value);
+            const targetCapital = Number(document.querySelector("#targetCapital").value);
+            const startBet = Number(document.querySelector("#startBet").value);
+            const resultText = document.querySelector("#resultText");
+            const startButton = document.querySelector("#startButton");
+
+            if (!currentCapital || !targetCapital || !startBet) {
+                resultText.style.color = "red";
+                resultText.innerHTML = "Aseta kaikille kentille numeroarvo joka on suurempi kuin 0"
+                return;
+            }
+            if (startBet > targetCapital || startBet > currentCapital) {
+                resultText.style.color = "red";
+                resultText.innerHTML = "Aloituspanos ei voi olla suurempi kuin kumpikaan pääomista"
+                return;
+            }
+            if (currentCapital > targetCapital) {
+                resultText.style.color = "red";
+                resultText.innerHTML = "Aloitupääoma ei voi olla suurempi kuin tavoitepääoma"
+                return;
+            }
+
+            resultText.innerHTML = "Simuloidaan...";
+            startButton.disabled = true;
+
+            setTimeout(() => {
+                let spins = 0;
+                let currentBet = startBet;
+                let maxCapital = currentCapital;
+                let minCapital = currentCapital;
+                let winStreak = loseStreak = maxWinStreak = maxLoseStreak = 0;
+                while (currentCapital > 0 && currentCapital < targetCapital) {
+                    if (currentCapital < currentBet) {
+                        currentBet = currentCapital;
+                    }
+                    console.log(maxWinStreak);
+                    const isWinSpin = Math.floor(Math.random() * 37) >= 19;
+
+                    if (isWinSpin) {
+                        loseStreak = 0;
+                        winStreak++;
+                        currentCapital += currentBet;
+                        currentBet = startBet;
+                        maxCapital = Math.max(currentCapital, maxCapital);
+                        maxWinStreak = Math.max(maxWinStreak, winStreak);
+                    }
+                    else {
+                        winStreak = 0;
+                        loseStreak++;
+                        currentCapital -= currentBet;
+                        currentBet = currentBet * 2;
+                        minCapital = Math.min(currentCapital, minCapital);
+                        maxLoseStreak = Math.max(maxLoseStreak, loseStreak);
+                    }
+                    spins++;
+                }
+                startButton.disabled = false;
+                const percentCapital = (maxCapital / targetCapital * 100).toFixed(1);
+                resultText.style.color = "black";
+                resultText.innerHTML = `<span>Pyöräytyksiä yhteensä: <b>${spins}</b></span>`
+                resultText.innerHTML += `<span>Korkein pääoma pyöräytysten aikana: <b>${maxCapital} (${percentCapital}% tavoitteesta)</b></span>`
+                resultText.innerHTML += `<span>Matalin pääoma pyöräytysten aikana: <b>${minCapital}</b></span>`
+                resultText.innerHTML += `<span>Pisin voittoputki: <b>${maxWinStreak}</b></span>`
+                resultText.innerHTML += `<span>Pisin häviöputki: <b>${maxLoseStreak}</b></span>`
+                resultText.innerHTML += currentCapital >= targetCapital ? `<span style="color: green;">Martingale toimii</span>` : `<span style="color: red;">Martingale ei toimi</span>`
+            }, 1);
+
+        }
+
+    </script>
+</body>
+
+</html>
